@@ -1,0 +1,63 @@
+Funcionalidades:
+O software é utilizado para administrar um sistema de time de futebol,  tem como funções, adicionar qualquer tipo de funcionários, recursos e sócios da organização, gerar relatórios sobre todos os três itens citados anteriormente, possui função de alterar dados do sistema, como login e senha, também pode alterar valor de contribuição de cada tipo de sócio.
+
+Classes:
+Foram utilizadas como uma forma de organizar e distribuir o código, utilizei 10 classes:
+  Isoccer: Classe principal, nela o usuário faz login no sistema e escolhe qual próximo passo executar, o usuário também poderá atribuir informações para os funcionários através do método Info e informações para Recursos no método RecursoInfo, as informações do sistema, como login e senha, podem se alteradas nessa classe, assim como os valores de contribuição dos sócios.
+
+  Time: Classe que contém as estruturas que vão armazenar os funcionários, recursos e sócios do time em ArrayLists, essa classe possui métodos para verificar dados dos funcionários, recursos e sócios para mostrar ao usuário na hora de gerar relatórios, por exemplo.
+  
+  Pessoa: É a super classe que possui atributos para a maioria dos funcionários, pois a maioria deles possuem os mesmos atributos, essa classe possui seu construtor e métodos get e set.
+
+  Médico: É uma sub classe da classe pessoa, possui um atributo a mais que todos os outros funcionários, tem o seu construtor e métodos get e set.
+
+  Motorista: É uma sub classe da classe pessoa, possui um atributo a mais que todos os outros funcionários, tem o seu construtor e métodos get e set.
+
+  Jogador: É uma sub classe da classe pessoa, possui alguns atributos a mais que todos os outros funcionários, tem o seu construtor e métodos get e set.
+  Recurso: É a super classe que possui atributos para todos os recursos físicos do time, ela tem o construtor e métodos get e set.
+
+  Estádio: É uma sub classe da classe Recurso, possui seus próprios atributos, construtor e métodos get e set.
+
+  Centro: É uma sub classe da classe Recurso, possui seus próprios atributos, construtor e métodos get e set.
+
+  Sócio:   É uma sub classe da classe pessoa, possui seus próprio atributos, construtor e métodos get e set.
+
+
+Distribuição de métodos:
+
+    Os métodos foram distribuídos de acordo com suas funções, ou seja, uma classe possui um método específico para uma determinada operação em um atributo pertencente a ela ou uma estrutura.
+
+    A Classe Isoccer possui  os métodos Info e Recurso Info, que são utilizados para atribuir informações a funcionários e recursos, respectivamente.
+
+    A Classe Time possui os métodos:
+            1- AddFuncionario: Adiciona um funcionário ao time, em um ArrayList do tipo Pessoa, listaPessoas.
+            2- AddRecurso: Adiciona um recurso ao time, em um ArrayList do tipo Recurso, listaRecursos.
+            3- VerificarSocios:  faz uma busca no ArrayList, listaSocios, é mostra a quantidade de sócios adimplentes e inadimplentes, em seguida percorre a lista novamente e imprime na tela as informações de cada sócio.
+            4- AddSocio: Adiciona um sócio ao time, em um ArrayList do tipo Pessoa, listaSocios.
+            5- RodarRelatorio: percorre a listaPessoas em busca de um objeto do tipo Técnico e imprime as informações dele na tela, em seguida percorre a listaJogadores e imprime as informações de cada jogador.
+            6- EstadoJogadores: percorre a listaJogadores duas vezes, a primeira para imprimir as informações de jogadores aptos e a segunda para imprimir as informações de jogadores inaptos.
+            7- ServicosGerais: percorre a listaPessoas e imprime a informação de cada funcionário, independente do tipo, exceto o funcionário do tipo técnico.
+            8- MostrarRecursos:  percorre a listaRecursos e imprime na seguinte ordem, primeiro é impresso na tela informações de recursos que não sejam do tipo estádio, nem do tipo centro, depois imprime informações de recursos do tipo estádio e por último, do tipo centro.
+            9- RemoverRecurso: percorre a listaRecursos e verifica se há um recurso do tipo requisitado pelo usuário, se houver, será removido uma unidade desse tipo.
+            10- Verificao: percorre a listaRecursos e dado o tipo, diz quantos recursos desse tipo estão disponíveis e indisponíveis.
+    
+    Todas as outras classes possuem apenas métodos get e set e toString.
+
+Herança:
+
+    Há duas super classes, Pessoa e Recurso, elas foram utilizadas pois a maioria dos funcionários e recursos possuíam os mesmo atributos, assim foi possível reutilizar a classe, possibilitando a criação de apenas três subclasses para a super classe Pessoa e duas para a super classe Recurso, ou seja, o código ficou menor e mais claro.
+As vantagens que pude perceber foi reutilização de código, nenhuma duplicação de atributos e métodos, código menor e mais claro.
+    
+Tratamento de exceções:
+    Foi utilizado muito na main por causa do métodos de atribuir informações, evita que o código pare durante a execução por causa de alguma entrada que não corresponda a entrada desejada, além de ter tratado entradas numéricas, através do try e catch, tratei entradas do tipo string com decisões e análise da entrada.
+    A grande vantagem é que o usuário terá várias chances até digitar a entrada correta e não terá que executar o programa novamente por causa de uma única entrada.
+    Uma desvantagem é que há muita repetição do mesmo trecho de código, no caso o try e catch para tratar possíveis erros em várias entradas diferentes.
+
+Extensibilidade:
+    Como não é uma boa prática criar várias classes com mesmos atributos, ou seja, a repetição de código foi evitada através da super classe. Com a super classe pude estender  90% dos atributos para as subclasses, por exemplo, três subclasses que herdam os atributos da super classe pessoa.
+    Vantagem é que pude utilizar os mesmo atributos sem precisar declara-los novamente em diferentes classes.
+
+Reuso:
+    Através da herança pude reutilizar os atributos em classes que herdavam de uma super classe, evitando mais uma vez a repetição de código e utilizando boas práticas.
+
+
