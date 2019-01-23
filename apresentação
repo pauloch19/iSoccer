@@ -1,5 +1,12 @@
 Funcionalidades:
-O software é utilizado para administrar um sistema de time de futebol,  tem como funções, adicionar qualquer tipo de funcionários, recursos e sócios da organização, gerar relatórios sobre todos os três itens citados anteriormente, possui função de alterar dados do sistema, como login e senha, também pode alterar valor de contribuição de cada tipo de sócio.
+O software é utilizado para administrar um sistema de time de futebol, nele o usuário faz login que informações padrões e uma vez logado, através de condições, pode escolher diversas funções, são elas:
+    1-adicionar qualquer tipo de funcionários: essa função chama um método na classe Isoccer, que vai pegar todas as informações do funcionário e depois chamar um método na classe Time que vai adicionar o funcionário no sistema.
+    2- adicionar recursos: essa função chama um método na classe Isoccer, que vai pegar todas as informações do recurso e depois chamar um método na classe Time que vai adicionar o recurso no sistema.
+    3- adicionar sócios da organização: essa função entra em uma condição que dará acesso ao usuário digitar informações do sócio e depois adicionará esse sócio no sistema.
+    4- gerar relatórios sobre todos os três itens citados anteriormente: essa função chama um método na classe Time, o método chamado dependerá do tipo do item que será feito o relatório.
+    5- função de alterar dados do sistema, como login e senha, também pode alterar valor de contribuição de cada tipo de sócio: essa função vai permitir que o usuário altere as informações do sistema na própria classe Isoccer.
+    6- verificar recurso: permite ao usuário verificar a quantidade de determinado recurso através de um método na classe Time.
+    7- remover recurso: permite ao usuário remover um recurso através de um método na classe Time.
 
 Classes:
 Foram utilizadas como uma forma de organizar e distribuir o código, utilizei 10 classes:
@@ -59,3 +66,5 @@ Extensibilidade:
 
 Reuso:
     Através da herança pude reutilizar os atributos em classes que herdavam de uma super classe, evitando mais uma vez a repetição de código e utilizando boas práticas. um método muito reutilizado é o toString que é chamado em vários métodos da classe Time para imprimir informações de todos e tudo no sistema, o mesmo ocorre para alguns métodos get e set de alguns atributos.
+
+
