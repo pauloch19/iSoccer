@@ -58,6 +58,4 @@ Extensibilidade:
     Vantagem é que pude utilizar os mesmo atributos sem precisar declara-los novamente em diferentes classes.
 
 Reuso:
-    Através da herança pude reutilizar os atributos em classes que herdavam de uma super classe, evitando mais uma vez a repetição de código e utilizando boas práticas.
-
-
+    Através da herança pude reutilizar os atributos em classes que herdavam de uma super classe, evitando mais uma vez a repetição de código e utilizando boas práticas. um método muito reutilizado é o toString que é chamado em vários métodos da classe Time para imprimir informações de todos e tudo no sistema, o mesmo ocorre para alguns métodos get e set de alguns atributos.
